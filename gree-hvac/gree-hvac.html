@@ -1,10 +1,10 @@
 <script type="text/javascript">
-    RED.nodes.registerType('gree-hvac', {
+    RED.nodes.registerType('gree-hvac-2', {
         category: 'devices',
         color: '#98cecf',
         defaults: {
             name: {value: "Gree HVAC"},
-            device: {value: "", type: "gree-hvac-config", required: true},
+            device: {value: "", type: "gree-hvac-config-2", required: true},
             interval: {value: "3", required: true},
             debug: {value: false}
         },
@@ -17,7 +17,7 @@
     });
 </script>
 
-<script type="text/x-red" data-template-name="gree-hvac">
+<script type="text/x-red" data-template-name="gree-hvac-2">
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
@@ -39,6 +39,6 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="gree-hvac">
+<script type="text/x-red" data-help-name="gree-hvac-2">
     <p>Provides a node for control Gree HVAC (Heating, ventilation, and air conditioning)</p>
 </script>

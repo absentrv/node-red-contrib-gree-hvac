@@ -1,5 +1,5 @@
 <script type="text/javascript">
-    RED.nodes.registerType('gree-hvac-config', {
+    RED.nodes.registerType('gree-hvac-config-2', {
         category: 'config',
         defaults: {
             name: {value: "", required: true, validate: RED.validators.regex(/^[a-zA-Z0-9-_\s]+$/)},
@@ -11,7 +11,7 @@
     });
 </script>
 
-<script type="text/x-red" data-template-name="gree-hvac-config">
+<script type="text/x-red" data-template-name="gree-hvac-config-2">
     <div class="form-row">
         <label for="node-config-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-config-input-name" placeholder="Name">

@@ -5,5 +5,5 @@ module.exports = function (RED) {
         this.host = config.host;
     }
 
-    RED.nodes.registerType("gree-hvac-config", GreeHvacConfigNode, {});
+    RED.nodes.registerType("gree-hvac-config-2", GreeHvacConfigNode, {});
 };

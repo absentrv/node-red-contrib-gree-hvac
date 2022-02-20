@@ -16,6 +16,8 @@ module.exports = function (RED) {
             debug: config.debug
         });
 
+
+
         const statusConnected = () => {
             node.status({fill: 'green', shape: 'dot', text: 'connected to ' + client.getDeviceId()})
         };
@@ -27,6 +29,7 @@ module.exports = function (RED) {
 
         client.on('connect', statusConnected);
         client.on('update', (updatedProperties, properties) => {
+            // node.warn("Reconnect or change from remote");
             statusConnected();
             node.send([{
                 topic: 'updated',
@@ -37,6 +40,7 @@ module.exports = function (RED) {
             }]);
         });
         client.on('success', (updatedProperties, properties) => {
+            // node.warn("success");
             node.send([{
                 topic: 'acknowledged',
                 payload: updatedProperties
@@ -55,11 +59,12 @@ module.exports = function (RED) {
                 client.setProperty(msg.topic, msg.payload);
         });
 
+
         this.on('close', function () {
             client.disconnect();
             client = null;
         });
     }
 
-    RED.nodes.registerType('gree-hvac', GreeHvacNode);
+    RED.nodes.registerType('gree-hvac-2', GreeHvacNode);
 };
